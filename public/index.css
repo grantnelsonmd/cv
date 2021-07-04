@@ -138,14 +138,23 @@ button:hover {
 
 .badges {
   display: flex;
+  flex: 1 0 auto;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   position: absolute;
   bottom: 30px;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
 }
 
 .badge {
   position: relative;
-  display: grid;
+  display: flex;
   grid-template-columns: 50px 1fr;
   align-items: center;
   margin: 0 0 0;

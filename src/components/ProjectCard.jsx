@@ -12,13 +12,24 @@ function ProjectCard(props){
         />)
     }
 
+    function configureDate(){
+        if (props.dateEnd){
+            return(
+              <p>{props.dateStart} to {props.dateEnd}</p>
+            )
+        } else {
+            return(
+                <p>{props.dateStart}</p>
+            )
+        }
+    }
     //if vertical height of window shrinks beyond limit collapse subtitle text into "..."
 
     return(
         <div className="project-card">
             <header className="project-card-header">
                 <a href="..." alt="..."><h1>{props.title}</h1></a>
-                <p>{props.dateStart} to {props.dateEnd}</p>
+                {configureDate()}
                 <h4>{props.subtitle}</h4>
             </header>
             <div className="badges">
