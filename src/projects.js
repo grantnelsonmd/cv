@@ -14,6 +14,13 @@ const projects = [
         skills: ["csharp", "unity", "blender"]
     },
     {
+        title: "CV Website",
+        dateStart: "2021",
+        dateEnd: "",
+        subtitle: "Website built for CV and React practice.",
+        skills: ["html", "css", "react", "javascript"]
+    },
+    {
         title: "The 5-E Project",
         dateStart: "2019",
         dateEnd: "",

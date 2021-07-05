@@ -30,6 +30,34 @@ function Badge(props){
             return(
                 <div className="badge"><img src={photoshop} alt=""/></div>
             );
+        case "html":
+        return(
+            <div className="badge"><img src={html} alt=""/></div>
+        );
+        case "react":
+            return(
+                <div className="badge"><img src={react} alt=""/></div>
+            );
+        case "css":
+            return(
+                <div className="badge"><img src={css} alt=""/></div>
+            );
+        case "javascript":
+            return(
+                <div className="badge"><img src={javascript} alt=""/></div>
+            );
+        case "nodejs":
+            return(
+                <div className="badge"><img src={nodejs} alt=""/></div>
+            );
+        case "unreal":
+            return(
+                <div className="badge"><img src={unreal} alt=""/></div>
+            );
+        case "solidity":
+            return(
+                <div className="badge"><img src={solidity} alt=""/></div>
+            );
         default:
             return(
                 <div className="badge">{props.skill}</div>
