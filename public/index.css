@@ -125,10 +125,12 @@ button:hover {
 }
 
 .project-card:hover {
+  -webkit-transform: translate(0, -1rem);
   transform: translateY(-1rem);
 }
 
 .project-card:hover~.project-card {
+  -webkit-transform: translate(140px, 0);
   transform: translateX(140px); 
 }
 
@@ -137,19 +139,19 @@ button:hover {
 }
 
 .badges {
-  display: flex;
-  flex: 1 0 auto;
   display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  flex: 1 0 auto;
   position: absolute;
-  bottom: 30px;
-  flex-wrap: wrap;
+  bottom: 30px !important;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
+  flex-wrap: wrap;
 }
 
 .badge {
