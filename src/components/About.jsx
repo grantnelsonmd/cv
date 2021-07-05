@@ -9,7 +9,6 @@ function About(props){
         "html",
         "css",
         "javascript",
-        "nodejs",
         "react",
         "photoshop",
         "blender",
@@ -25,7 +24,7 @@ function About(props){
     return(
         <div>
             <div className="col-md-9 col-sm-12" id="about-page">
-                <p>Emergency Physician, fellowship trained in bedside ultrasound.</p>
+                <p>Emergency physician, fellowship trained in bedside ultrasound.</p>
                 <h2>Exploring virtual reality, game design, and interactive narratives in medical education.</h2>
                 <br></br>
                     <p>Experienced with:</p>
