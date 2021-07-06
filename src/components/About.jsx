@@ -5,7 +5,7 @@ function About(props){
 
     let skills = [ 
         "csharp",
-        "unity",
+        "unitywhite",
         "html",
         "css",
         "javascript",
@@ -27,7 +27,7 @@ function About(props){
                 <p>Emergency physician, fellowship trained in bedside ultrasound.</p>
                 <h2>Exploring virtual reality, game design, and interactive narratives in medical education.</h2>
                 <br></br>
-                    <p>Experienced with:</p>
+                    <p>Experience with:</p>
                     <div className="about-badges">{skills.map(createSkillBadges)}</div>
             </div>
         </div>

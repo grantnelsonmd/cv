@@ -12,6 +12,7 @@ function Window(props){
             dateEnd={project.dateEnd}
             subtitle={project.subtitle}
             skills={project.skills}
+            url={project.url}
         />)
     }
 

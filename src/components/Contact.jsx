@@ -4,7 +4,7 @@ function Contact(){
 
     return(
         <div className="col-md-9 col-sm-12 my-auto" id="about-page">
-            <p>I look forward to hearing from you.</p>
+            <p><a href="mailto: grantnelsonmd@gmail.com">I look forward to hearing from you.</a></p>
         </div>
     )
 }

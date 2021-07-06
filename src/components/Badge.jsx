@@ -11,6 +11,7 @@ import react from "./img/react.png";
 import solidity from "./img/solidity.png";
 import unreal from "./img/unreal.png";
 import mongodb from "./img/mongodb.png";
+import unitywhite from "./img/unity-white.png";
 
 function Badge(props){
 
@@ -62,6 +63,10 @@ function Badge(props){
         case "mongodb":
             return(
                 <div className="badge"><img src={mongodb} alt=""/></div>
+            );
+        case "unitywhite":
+            return(
+                <div className="badge"><img src={unitywhite} alt=""/></div>
             );
         default:
             return(

@@ -12,6 +12,18 @@ function ProjectCard(props){
         />)
     }
 
+    function createUrl(url){
+        if (url === "none"){
+            return(
+                <h1>{props.title}</h1>
+            )
+        } else {
+            return (
+                <a href={props.url} alt="..."><h1 className="box-underline">{props.title}</h1></a>
+            )
+        }
+    }
+
     function configureDate(){
         if (props.dateEnd){
             return(
@@ -28,7 +40,7 @@ function ProjectCard(props){
     return(
         <div className="project-card">
             <header className="project-card-header">
-                <a href="..." alt="..."><h1>{props.title}</h1></a>
+                {createUrl(props.url)}
                 {configureDate()}
                 <h4>{props.subtitle}</h4>
             </header>
