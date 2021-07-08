@@ -122,7 +122,6 @@ button:hover {
   display: -webkit-flex; 
   display: flex;
   flex: 1 0 auto;
-  margin: auto;
   position: relative;
   flex-direction: column;
   height: 90%;

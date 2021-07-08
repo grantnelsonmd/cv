@@ -39,11 +39,11 @@ function ProjectCard(props){
 
     return(
         <div className="project-card">
-            <header className="project-card-header">
+            <div>
                 {createUrl(props.url)}
                 {configureDate()}
                 <h4>{props.subtitle}</h4>
-            </header>
+            </div>
             <div className="badges">
                 {props.skills.map(createSkillBadges)}
             </div>
