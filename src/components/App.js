@@ -33,7 +33,7 @@ function App() {
     <div>
         <div className="position-absolute top-50 start-0 end-0 translate-middle-y" id="main-container">
           <div className="row row-cols-2 h-100">
-            <div className="col-md-3 col-sm-12 my-auto">
+            <div className="col-md-3 my-auto">
               <Title />
               <Button handleClick={buttonClicked} name="PROJECTS" />
               <Button handleClick={buttonClicked} name="ABOUT" />
