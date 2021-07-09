@@ -1,7 +1,18 @@
 import React, {useState} from "react";
 import emailjs from "emailjs-com";
+import validate from "../validate";
+import useForm from "./useForm";
+import ContactForm from "./ContactForm";
+import ContactSuccess from "./ContactSuccess";
 
 function Contact(){
+    let [valid, setValid] = useState(false);
+
+    function validateForm() {
+        setValid(true);
+    }
+
+    //emailjs integration
     let [submitted, updateSubmitted] = useState(false);
     let userId = "user_pRU8DqoslX8I9cL2nyPta";
     let templateId = "contact-form-template";
@@ -21,24 +32,7 @@ function Contact(){
 
     return(
         <div>
-            <form className="contact-form" onSubmit={sendEmail}>
-                <h1 className="form-section">Contact Me</h1>
-                <div className="form-section">
-                    <label className="form-label">Name</label>
-                        <input className="form-input" type="text" name="name" />
-                </div>
-                <div className="form-section">
-                    <label className="form-label">E-Mail</label>
-                        <input className="form-input" type="text" name="email" />
-                </div>
-                <div className="form-section">
-                    <label className="form-label">Message</label>
-                        <textarea className="form-input" type="text" name="message" />
-                </div>
-                <div className="form-section">
-                    <button className="form-btn" type="submit" value="Send">{submitted? "Thank you" : "Submit"}</button>
-                </div>
-            </form>
+            {!valid ? <ContactForm validateForm={validateForm}/> : <ContactSuccess />}
         </div>
     );
 }
