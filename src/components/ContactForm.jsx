@@ -1,19 +1,42 @@
 import React, {useState} from "react";
 import validate from "../validate";
 import useForm from "./useForm";
+import emailjs from "emailjs-com";
+import ContactSuccess from "./ContactSuccess";
 
-export default function ContactForm({validateForm}) {
-    const {handleChange, values, handleSubmit, errors} = 
-    useForm(validateForm, validate);
+export default function ContactForm(formSubmitted) {
+    const {handleChange, handleSubmit, values, errors} = 
+    useForm(submit, validate);
+    const [successfulSubmit, setSuccessfulSubmit] = useState(false);
 
-    let [submitted, updateSubmitted] = useState(false);
+    function submit(e){
+        setSuccessfulSubmit(true);
+        sendEmail(e);
+    }
+
+    //emailjs integration
+    let userId = "user_pRU8DqoslX8I9cL2nyPta";
+    let templateId = "contact-form-template";
+
+    function sendEmail(e) {
+        emailjs.sendForm('gmail', templateId, e.target, userId)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
 
     return (
         <div>
+            {!successfulSubmit ? 
             <form className="contact-form" onSubmit={handleSubmit}>
                 <h1 className="form-section">Contact Me</h1>
                 <div className="form-section">
-                    <label className="form-label">Name <span className="form-error">{errors.name && errors.name}</span></label>
+                    <label className="form-label">
+                    Name 
+                    <span className="form-error">{errors.name && errors.name}</span>
+                    </label>
                         <input 
                         className="form-input" 
                         type="text" 
@@ -24,7 +47,10 @@ export default function ContactForm({validateForm}) {
                         />
                 </div>
                 <div className="form-section">
-                    <label className="form-label">E-Mail <span className="form-error">{errors.email && errors.email}</span></label>
+                    <label className="form-label">
+                    E-Mail 
+                    <span className="form-error">{errors.email && errors.email}</span>
+                    </label>
                         <input 
                         className="form-input" 
                         type="text" 
@@ -35,7 +61,10 @@ export default function ContactForm({validateForm}) {
                         />
                 </div>
                 <div className="form-section">
-                    <label className="form-label">Message <span className="form-error">{errors.message && errors.message}</span></label>
+                    <label className="form-label">
+                    Message 
+                    <span className="form-error">{errors.message && errors.message}</span>
+                    </label>
                         <textarea 
                         className="form-input" 
                         type="text" 
@@ -46,9 +75,11 @@ export default function ContactForm({validateForm}) {
                         />
                 </div>
                 <div className="form-section">
-                    <button className="form-btn" type="submit" value="Send">{submitted? "Thank you" : "Submit"}</button>
+                    <button className="form-btn" type="submit" value="Send">Submit</button>
                 </div>
             </form>
+            :
+            <ContactSuccess />}
         </div>
     )
 }
