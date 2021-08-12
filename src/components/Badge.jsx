@@ -33,9 +33,9 @@ function Badge(props){
                 <div className="badge"><img src={photoshop} alt=""/></div>
             );
         case "html":
-        return(
-            <div className="badge"><img src={html} alt=""/></div>
-        );
+            return(
+                <div className="badge"><img src={html} alt=""/></div>
+            );
         case "react":
             return(
                 <div className="badge"><img src={react} alt=""/></div>

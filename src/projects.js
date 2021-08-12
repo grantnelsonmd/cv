@@ -5,7 +5,7 @@ const projects = [
         dateEnd: "current",
         subtitle: "Virtual reality ultrasound simulator with fully integrated multiplayer and voice chat.",
         skills: ["csharp", "unity", "blender"],
-        url: "none"
+        url: "http://www.ultrasound-vr.com"
     },
     {
         title: "Virtual Reality Orientation",
